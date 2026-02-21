@@ -1,6 +1,7 @@
 const express = require("express");
 const serverConfig = require("./config/serverConfig.js");
 const connectDB = require("./config/dbConfig.js");
+const User = require("./schema/userSchema.js");
 
 const app = express();
 
@@ -18,4 +19,18 @@ app.get("/ping", (req, res) => {
 app.listen(serverConfig.PORT, async () => {
   await connectDB();
   console.log(`Server is Started at PORT: ${serverConfig.PORT}`);
+
+  /* TESTING PURPOSE KE LIYE......
+  // DataBase me v Save hoga Sirf Run Krne pe.................
+  
+  const newUser = await User.create({
+    email: "a@d.com",
+    password: "123456",
+    firstName: "Jonathan",
+    lastName: "Majors",
+    mobileNumber: "1231231232",
+  });
+  console.log("Created new User..");
+  console.log(newUser);
+  */
 });

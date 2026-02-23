@@ -1,5 +1,6 @@
 const User = require("../schema/userSchema");
 
+// STEP1:- USER REGISTRATION..............
 class UserRepository {
   async findUser(parameters) {
     try {

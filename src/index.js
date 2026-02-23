@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 
-// Routing Middlewares
+// Routing Middlewares......
+// STEP5:- USER REGISTRATION..
 app.use("/users", userRouter);
 app.use("/carts", cartRouter);
 

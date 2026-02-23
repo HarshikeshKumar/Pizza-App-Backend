@@ -2,12 +2,18 @@ const express = require("express");
 const serverConfig = require("./config/serverConfig.js");
 const connectDB = require("./config/dbConfig.js");
 const User = require("./schema/userSchema.js");
+const userRouter = require("./routes/userRoutr.js");
+const cartRouter = require("./routes/cartRoute.js");
 
 const app = express();
 
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
+
+// Routing Middlewares
+app.use("/users", userRouter);
+app.use("/carts", cartRouter);
 
 app.get("/ping", (req, res) => {
   console.log(req.body);

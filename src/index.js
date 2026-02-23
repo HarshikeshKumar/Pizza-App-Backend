@@ -1,7 +1,6 @@
 const express = require("express");
 const serverConfig = require("./config/serverConfig.js");
 const connectDB = require("./config/dbConfig.js");
-const User = require("./schema/userSchema.js");
 const userRouter = require("./routes/userRoutr.js");
 const cartRouter = require("./routes/cartRoute.js");
 
